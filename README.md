@@ -28,18 +28,16 @@ This project serves as a practical implementation for learning Java networking, 
 ## Folder Structure
 
 ```
-JavaChatGUI/
-├── .vscode/
-│   ├── launch.json
-│   └── settings.json
-├── bin/
-│   ├── ClientGUI.class
-│   ├── ServerGUI$ClientHandler.class
-│   └── ServerGUI.class
-├── lib/
-├── src/
-│   ├── ClientGUI.java
-│   └── ServerGUI.java
+src/main/java/com/mycompany/javachatapp/
+├── bin
+│ ├── ClientGUI.class
+│ ├── ClientGUI.java
+│ ├── MainLauncher.java
+│ └── ServerGUI.java
+├── target
+├── README.md
+├── nbactions.xml
+└── pom.xml
 ```
 
 ## Features
@@ -67,7 +65,8 @@ JavaChatGUI/
 ### Prerequisites
 
 - **Java Development Kit (JDK) 8 or higher** installed on your system.  
-- An IDE like IntelliJ IDEA, Eclipse, or use command line.  
+- **JavaFx** latest version
+- An IDE like Vs Code, Netbeans,IntelliJ IDEA, Eclipse, or use command line.  
 - (Optional) Git to clone the repository.
 
 ---
@@ -80,23 +79,41 @@ Open your terminal or command prompt and run:
 git clone https://github.com/Meta-Captain819/ClientServer.git
 cd ClientServer
 ```
-### Step 2: Compile the Server and the Client code
+### Step 2: Compile the Main Launcher, Server and the Client code
 If you are using an IDE, simply open the project and build it.
-If you prefer command line then run the following
+If you prefer command line then run the following according to the module path of your own.
+
+- Compile Main Launcher
 
 ```bash
-javac ServerGUI.java
-javac ClientGUI.java
+javac --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -d bin MainLauncher.java
+```
+- Compile Server
+
+```bash
+javac --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -d bin ServerGUI.java
+```
+- Compile Client
+
+```bash
+javac --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -d bin ClientGUI.java
+
+```
+
+### Step 3: Run the Main Launcher
+Use the command according to your own module path.
+```bash
+java --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -cp bin MainLauncher
 ```
 
 ### Step 3: Run the Server
-Use the command according to your own path.
+Use the command according to your own module path.
 ```bash
 java --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -cp bin ServerGUI
 ```
 
 ### Step 4: Run the Client/Clients
-You can run multiple Clients at once as well, Use the command according to your own path.
+You can run multiple Clients at once as well, Use the command according to your own module path.
 
 
 ```bash
@@ -107,6 +124,12 @@ java --module-path "C:\javafx-sdk-21\javafx-sdk-24.0.1\lib" --add-modules javafx
 This section shows the installation and the running instructions follow all the steps accordingly.
 
 ## Usage Guide
+
+### Starting the Main Launcher
+
+1. After launching the Main Launcher you can select what to run either the Server or the Client.
+2. Choose any either Server or Client, the order doesn't matter but remember the Client will not be able to communicate until the Server gets started.
+3. You can launch multiple clients as well by clicking the " Run Client " button as many times as you want.
 
 ### Starting the Server
 
@@ -158,14 +181,7 @@ This guide ensures smooth operation of the chat system and helps users understan
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 
-## 👨‍💻 Author Rights
 
-This software is developed and maintained by **Muzammil Mehdi**.  
-You are free to use, contribute, and extend the project under the terms of the MIT License.
-
-If you use this project in your own work, giving proper credit is appreciated and it is mandatory as well.
-
-For any inquiries or collaboration requests, feel free to reach out via GitHub: [Meta-Captain819](https://github.com/Meta-Captain819)
 
 
 
