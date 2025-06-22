@@ -76,7 +76,7 @@ src/main/java/com/mycompany/javachatapp/
 Open your terminal or command prompt and run:
 
 ```bash
-git clone https://github.com/Meta-Captain819/ClientServer.git
+git clone https://github.com/Meta-Captain819/JavaChatApp.git
 cd ClientServer
 ```
 ### Step 2: Compile the Main Launcher, Server and the Client code
